@@ -8,11 +8,32 @@ import random
 def index():
     return render_template("index.html", title="Rock, Paper, Scissors")
 
-@app.route("/<choice_1>/<choice_2>")
-def play(choice_1, choice_2):
-    player_1 = Player("Player 1", choice_1)
-    player_2 = Player("Player 2", choice_2)
+@app.route("/rock")
+def rock():
+    choice = ["rock", "paper", "scissors"]
+    player_1 = Player("Player 1", "rock")
+    player_2 = Player("Player 2", random.choice(choice))
     game = Game(player_1.choice, player_2.choice)
     results = game.game_function()
-    return render_template("index.html", title="The Results", choice_1=choice_1, choice_2=choice_2, results=results)
+    return render_template("index.html", title="The Results", results=results)
+
+@app.route("/paper")
+def paper():
+    choice = ["rock", "paper", "scissors"]
+    player_1 = Player("Player 1", "paper")
+    player_2 = Player("Player 2", random.choice(choice))
+    game = Game(player_1.choice, player_2.choice)
+    results = game.game_function()
+    return render_template("index.html", title="The Results", results=results)
+
+@app.route("/scissors")
+def scissors():
+    choice = ["rock", "paper", "scissors"]
+    player_1 = Player("Player 1", "scissors")
+    player_2 = Player("Player 2", random.choice(choice))
+    game = Game(player_1.choice, player_2.choice)
+    results = game.game_function()
+    return render_template("index.html", title="The Results", results=results)
+
+
 

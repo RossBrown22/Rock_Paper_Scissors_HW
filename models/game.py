@@ -6,22 +6,22 @@ class Game():
     def game_function(self):
    
         if self.choice_1 == self.choice_2:
-            return f"Both players have chosen {self.choice_1}. Nobody wins!"
+            return f"Nobody Wins! Both players have chosen {self.choice_1}!"
         elif self.choice_1 == "rock":
             if self.choice_2 == "scissors":
-                return "Rock beats scissors! Player 1 Wins!"
+                return "You Win! Rock beats scissors!"
             else:
-                return "Paper beats rock! Player 2 Wins!"
+                return "The Computer Wins! Paper beats rock!"
         elif self.choice_1 == "paper":
             if self.choice_2 == "rock":
-                return "Paper beats rock! Player 1 Wins!"
+                return "You Win! Paper beats rock!"
             else:
-                return "Scissors beats paper! Player 2 Wins!"
+                return "The Computer Wins! Scissors beats paper!"
         elif self.choice_1 == "scissors":
             if self.choice_2 == "paper":
-                return "Scissors beats paper! Player 1 Wins!"
+                return "You Win! Scissors beats paper!"
             else:
-                return "Rock beats scissors! Player 2 Wins!"
+                return "The Computer Wins! Rock beats scissors!"
 
 
 
